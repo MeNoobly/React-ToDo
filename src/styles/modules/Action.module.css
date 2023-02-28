@@ -1,0 +1,24 @@
+﻿.ActionBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+    padding: 20px 10px;
+    border: 1px solid black;
+}
+
+.ActionText {
+    font-size: 25px;
+    color: black;
+    width: 70%;
+}
+
+.ActionButton {
+    background-color: rgb(176, 62, 62);
+}
+
+.ButtonsBlock {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
