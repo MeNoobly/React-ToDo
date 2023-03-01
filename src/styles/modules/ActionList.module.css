@@ -1,0 +1,9 @@
+﻿.Text {
+    display: flex;
+    font-weight: 600;
+    font-size: 40px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}

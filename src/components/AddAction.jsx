@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import Action from './Action';
+import ActionList from './ActionList';
 import FormAddAction from './UI/Forms/FormAddAction/FormAddAction';
 
 const AddAction = () => {
@@ -26,9 +26,7 @@ const AddAction = () => {
     return (
       <div>
         <FormAddAction body={body} setBody={setBody} addNewAction={addNewAction}/>
-        {actions.map((action, number) =>
-          <Action action={action} key={action.id} number={number} remove={removePost}/>
-        )}
+        <ActionList actions={actions} removePost={removePost}/>
       </div>
     );
 };

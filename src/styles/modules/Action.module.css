@@ -1,24 +1,33 @@
 ﻿.ActionBlock {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin-top: 15px;
-    padding: 20px 10px;
-    border: 1px solid black;
+    margin-top: 30px;
+    padding: 20px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .ActionText {
+    display: flex;
     font-size: 25px;
-    color: black;
-    width: 70%;
+    color: white;
+    width: 85%;
+    overflow-wrap: break-word;
+    line-height: 150%;
 }
 
 .ActionButton {
     background-color: rgb(176, 62, 62);
+    width: 100%;
+    padding: 10px 20px;
 }
 
-.ButtonsBlock {
-    width: 25%;
-    display: flex;
-    justify-content: space-between;
+.ActionEditInput {
+    width: 85%;
+}
+
+.ActionEditButton {
+    width: 15%;
 }
