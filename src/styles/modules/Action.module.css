@@ -1,33 +1,38 @@
 ﻿.ActionBlock {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 30px;
-    padding: 20px 20px;
-    border: 1px solid white;
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.ActionText::before {
+  margin: auto 0;
+  content: "";
+  display: block;
+  background-color: white;
+  border-radius: 50%;
+  min-width: 15px;
+  max-width: 15px;
+  height: 15px;
+  margin-right: 15px;
 }
 
 .ActionText {
-    display: flex;
-    font-size: 25px;
-    color: white;
-    width: 85%;
-    overflow-wrap: break-word;
-    line-height: 150%;
+  display: flex;
+  font-size: 25px;
+  color: white;
+  width: 85%;
+  max-width: 720px;
+  line-height: 150%;
+  overflow-wrap: break-word;
 }
 
 .ActionButton {
-    background-color: rgb(176, 62, 62);
-    width: 100%;
-    padding: 10px 20px;
-}
-
-.ActionEditInput {
-    width: 85%;
-}
-
-.ActionEditButton {
-    width: 15%;
+  background-color: rgb(176, 62, 62);
+  width: 100%;
+  padding: 10px 20px;
 }
