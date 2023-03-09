@@ -15,11 +15,7 @@ const FormAddAction = (props) => {
             onChange={event => props.setBody(event.target.value)} 
             className={`${input.Input} ${styles.FormAddActionInput}`}
           />
-          <Button 
-            onClick={props.addNewAction} 
-            text="Добавить" 
-            className={`${button.Button} ${styles.FormAddActionButton}`}
-          />
+          <Button onClick={props.addNewAction} text="Добавить дело" className={button.Button}></Button>
         </form>
     );
 };
