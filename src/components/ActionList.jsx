@@ -12,12 +12,15 @@ const ActionList = (props) => {
     }
 
     return (
-        <div>
-            {props.actions.map((action, number) =>
-                <Action action={action} key={action.id} number={number} removePost={props.removePost}/>
-            )}
-        </div>
-    );
+        props.actions.map((action, number) => 
+            <Action 
+                action={action} 
+                key={action.id} 
+                number={number} 
+                removePost={props.removePost}
+            />
+        )
+    )
 };
 
 export default ActionList;
