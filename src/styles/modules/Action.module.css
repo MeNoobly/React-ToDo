@@ -9,7 +9,7 @@
   border-radius: 10px;
 }
 
-.ActionText::before {
+/* .ActionText::before {
   margin: auto 0;
   content: "";
   display: block;
@@ -19,7 +19,7 @@
   max-width: 15px;
   height: 15px;
   margin-right: 15px;
-}
+} */
 
 .ActionText {
   display: flex;
@@ -35,4 +35,37 @@
   background-color: rgb(176, 62, 62);
   width: 100%;
   padding: 10px 20px;
+}
+
+.ActionButton:not(:last-child) {
+  margin-right: 20px;
+}
+
+.ActionButtonBlue {
+  background-color: #1164B4;
+}
+
+.ActionDrag {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  max-width: 24px;
+  flex-wrap: wrap;
+}
+
+.ActionDragDot {
+  background-color: white;
+  border-radius: 50%;
+  max-width: 6px;
+  min-width: 6px;
+  max-height: 6px;
+  min-height: 6px;
+  margin-bottom: 4px;
+  margin-right: 3px;
+}
+
+.ButtonsBlock {
+  display: flex;
 }

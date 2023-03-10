@@ -11,9 +11,22 @@ const Action: FC<IActionProps> = (props) => {
 
     if (!isEdit) {
         return (
-            <div className={styles.ActionBlock} onClick={() => setIsEdit(true)}>
+            <div className={styles.ActionBlock}>
+                <div className={styles.ActionDrag}>
+                    <div className={styles.ActionDragDot}></div>
+                    <div className={styles.ActionDragDot}></div>
+                    <div className={styles.ActionDragDot}></div>
+                    <div className={styles.ActionDragDot}></div>
+                    <div className={styles.ActionDragDot}></div>
+                    <div className={styles.ActionDragDot}></div>
+                </div>
                 <p className={styles.ActionText}>{text}</p>
                 <div className={styles.ButtonsBlock}>
+                    <Button 
+                        text={"Редактировать"} 
+                        onClick={() => setIsEdit(true)}
+                        className={`${button.Button} ${styles.ActionButton} ${styles.ActionButtonBlue}`}
+                    />
                     <Button 
                         text={"Удалить"} 
                         onClick={props.removePost(props.action.id)}
