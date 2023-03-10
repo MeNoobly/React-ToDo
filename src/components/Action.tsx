@@ -1,10 +1,11 @@
-﻿import React, { useState } from 'react';
+﻿import React, { FC, useState } from 'react';
 import button from './UI/Button/Button.module.css';
 import styles from "../styles/modules/Action.module.css";
 import Button from './UI/Button/Button';
 import FormEditAction from './UI/Forms/FormEditAction/FormEditAction';
+import { IActionProps } from '../types/types';
 
-const Action = (props) => {
+const Action: FC<IActionProps> = (props) => {
     const [text, setText] = useState(`${props.action.body}`);
     const [isEdit, setIsEdit] = useState(false);
 

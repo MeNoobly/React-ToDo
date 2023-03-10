@@ -1,12 +1,13 @@
-﻿import React, { useState } from 'react';
+﻿import React, { FC, useContext, useState } from 'react';
+import { ActionsContext } from '../context/actions';
 import ActionList from './ActionList';
 import FormAddAction from './UI/Forms/FormAddAction/FormAddAction';
 
-const AddAction = () => {
-    const [actions, setActions] = useState([]);
+const AddAction: FC = () => {
+    const {actions, setActions} = useContext(ActionsContext);
     const [body, setBody] = useState("");
 
-    function addNewAction(event) {
+    function addNewAction(event: React.MouseEvent<HTMLButtonElement>): void {
       event.preventDefault();
       const newAction = {
         id: Date.now(),
@@ -16,8 +17,8 @@ const AddAction = () => {
       setBody("");
     }
 
-    function removePost(id) {
-      return (event) => {
+    function removePost(id: number): (event: React.MouseEvent<HTMLButtonElement>) => void {
+      return (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         setActions([...actions].filter((item) => item.id !== id));
       }
@@ -26,7 +27,7 @@ const AddAction = () => {
     return (
       <div>
         <FormAddAction body={body} setBody={setBody} addNewAction={addNewAction}/>
-        <ActionList actions={actions} removePost={removePost}/>
+        <ActionList removePost={removePost}/>
       </div>
     );
 };
