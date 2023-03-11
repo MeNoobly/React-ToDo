@@ -6,15 +6,17 @@
     margin-top: 30px;
     margin-right: 20px;
     background-color: #FF8800;
+    width: 180px;
 }
 
 .SortText {
     color: white;
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 17px;
     opacity: 1;
     transition: opacity .25s linear;
     padding-left: 15px;
+    margin-bottom: 20px;
 }
 
 .None {

@@ -1,9 +1,11 @@
 ﻿import React, { FC } from 'react';
+import styles from "../styles/modules/ActionControls.module.css";
+import SearchIcon from './UI/Icons/SearchIcon/SearchIcon';
 
 const AddFilter: FC = () => {
     return (
-        <div>
-            <p>123</p>
+        <div className={styles.Filter}>
+            <SearchIcon/>
         </div>
     );
 };

@@ -14,8 +14,8 @@ const App = () => {
   return (
     <ActionsContext.Provider value={{actions, setActions}}>
       <div className={styles.Container}>
-          <Header text="Список дел"/>
-          <AddAction/>
+        <Header text="Список дел"/>
+        <AddAction/>
       </div>
     </ActionsContext.Provider>
   );

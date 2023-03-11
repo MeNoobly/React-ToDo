@@ -3,8 +3,7 @@ import Action from './Action';
 import styles from "../styles/modules/ActionList.module.css"
 import { ActionsContext } from '../context/actions';
 import { IActionListProps } from '../types/types';
-import AddSort from './AddSort';
-import AddFilter from './AddFilter';
+import ActionControls from './ActionControls';
 
 const ActionList: FC<IActionListProps> = (props) => {
     
@@ -21,10 +20,7 @@ const ActionList: FC<IActionListProps> = (props) => {
     return (
         <div>
             <div>
-                <AddSort/>
-                <AddFilter/>
-            </div>
-            <div>
+                <ActionControls/>
                 {actions.map((action, number: number) => 
                     <Action 
                         action={action} 

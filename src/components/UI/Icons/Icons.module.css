@@ -1,0 +1,7 @@
+﻿.SearchIcon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    transform: translateY(3px);
+}

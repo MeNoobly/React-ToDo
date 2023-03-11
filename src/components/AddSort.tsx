@@ -12,40 +12,38 @@ const AddSort: FC = () => {
     const sortText = document.getElementById("sortText");
 
     function sortActionList(): void {
-        if (sort === "") {
+        if (actions.length > 1) {
             clearTimeout(timerRef.current);
             sortText?.classList.remove(sortStyles.None);
-            setActions([...actions].sort((firstAction, secondAction) => 
-                firstAction.id - secondAction.id).reverse()
-            );
-            setSort("Список дел с конца");
-        } else if (sort === "Дела по умолчанию") {
-            sortText?.classList.remove(sortStyles.None);
-            setActions([...actions].sort((firstAction, secondAction) => 
-                firstAction.id - secondAction.id).reverse()
-            );
-            setSort("Список дел с конца");
-        } else if (sort === "Список дел с конца") {
-            sortText?.classList.remove(sortStyles.None);
-            setActions([...actions].sort((firstAction, secondAction) => 
-                firstAction.body.localeCompare(secondAction.body))
-            );
-            setSort("Дела от А до Я (от A до Z)");
-        } else if (sort === "Дела от А до Я (от A до Z)") {
-            sortText?.classList.remove(sortStyles.None);
-            setActions([...actions].sort((firstAction, secondAction) => 
-                firstAction.body.localeCompare(secondAction.body)).reverse()
-            );
-            setSort("Дела от Я до А (от Z до A)");
-        } else if (sort === "Дела от Я до А (от Z до A)") {
-            sortText?.classList.remove(sortStyles.None);
-            setActions([...actions].sort((firstAction, secondAction) => 
-                firstAction.id - secondAction.id)
-            );
-            setSort("Дела по умолчанию");
+            switch(sort) {
+                case "":
+                case "Дела по умолчанию":
+                    setActions([...actions].sort((firstAction, secondAction) => 
+                        firstAction.id - secondAction.id).reverse()
+                    );
+                    setSort("Список дел с конца");
+                    break;
+                case "Список дел с конца":
+                    setActions([...actions].sort((firstAction, secondAction) => 
+                        firstAction.body.localeCompare(secondAction.body))
+                    );
+                    setSort("Дела от А до Я (от A до Z)");
+                    break;
+                case "Дела от А до Я (от A до Z)":
+                    setActions([...actions].sort((firstAction, secondAction) => 
+                        firstAction.body.localeCompare(secondAction.body)).reverse()
+                    );
+                    setSort("Дела от Я до А (от Z до A)");
+                    break;
+                case "Дела от Я до А (от Z до A)":
+                    setActions([...actions].sort((firstAction, secondAction) => 
+                        firstAction.id - secondAction.id)
+                    );
+                    setSort("Дела по умолчанию");
+                    break;
+            }
+            timerRef.current = setTimeout(() => sortText?.classList.add(sortStyles.None), 1500);
         }
-
-        timerRef.current = setTimeout(() => sortText?.classList.add(sortStyles.None), 1500);
     }
 
     return (

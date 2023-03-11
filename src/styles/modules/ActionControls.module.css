@@ -1,0 +1,18 @@
+﻿.ActionControlsBlock {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.Filter {
+    position: absolute;
+    color: white;
+    left: 200px;
+    top: 35px;
+}
+
+.FilterSearch {
+    display: block;
+    width: 128px;
+    height: 128px;
+}
