@@ -1,6 +1,5 @@
 ﻿.SortSection {
-    display: flex;
-    align-items: center;
+    display: block;
 }
 
 .SortButton {
@@ -11,11 +10,11 @@
 
 .SortText {
     color: white;
-    text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 22px;
     opacity: 1;
     transition: opacity .25s linear;
+    padding-left: 15px;
 }
 
 .None {

@@ -1,4 +1,4 @@
-﻿import React, { FC, useContext, useRef, useState } from 'react';
+import React, { FC, useContext, useRef, useState } from 'react';
 import Button from './UI/Button/Button';
 import button from "./UI/Button/Button.module.css"
 import styles from "./UI/Forms/FormAddAction/FormAddAction.module.css";
@@ -9,25 +9,39 @@ const AddSort: FC = () => {
     const {actions, setActions} = useContext(ActionsContext);
     const [sort, setSort] = useState("");
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const sortText = document.getElementById("sortText");
 
     function sortActionList(): void {
-        clearTimeout(timerRef.current);
-
-        let sortText = document.getElementById("sortText");
-        if (sort === "" || sort === "Дела по умолчанию") {
+        if (sort === "") {
+            clearTimeout(timerRef.current);
             sortText?.classList.remove(sortStyles.None);
-            setSort("Ранние добавленные дела");
-        } else if (sort === "Ранние добавленные дела") {
+            setActions([...actions].sort((firstAction, secondAction) => 
+                firstAction.id - secondAction.id).reverse()
+            );
+            setSort("Список дел с конца");
+        } else if (sort === "Дела по умолчанию") {
             sortText?.classList.remove(sortStyles.None);
-            setSort("Поздние добавленные дела");
-        } else if (sort === "Поздние добавленные дела") {
+            setActions([...actions].sort((firstAction, secondAction) => 
+                firstAction.id - secondAction.id).reverse()
+            );
+            setSort("Список дел с конца");
+        } else if (sort === "Список дел с конца") {
             sortText?.classList.remove(sortStyles.None);
+            setActions([...actions].sort((firstAction, secondAction) => 
+                firstAction.body.localeCompare(secondAction.body))
+            );
             setSort("Дела от А до Я (от A до Z)");
         } else if (sort === "Дела от А до Я (от A до Z)") {
             sortText?.classList.remove(sortStyles.None);
+            setActions([...actions].sort((firstAction, secondAction) => 
+                firstAction.body.localeCompare(secondAction.body)).reverse()
+            );
             setSort("Дела от Я до А (от Z до A)");
         } else if (sort === "Дела от Я до А (от Z до A)") {
             sortText?.classList.remove(sortStyles.None);
+            setActions([...actions].sort((firstAction, secondAction) => 
+                firstAction.id - secondAction.id)
+            );
             setSort("Дела по умолчанию");
         }
 
