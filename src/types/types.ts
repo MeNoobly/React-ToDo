@@ -26,6 +26,10 @@ export interface IFormEditActionProps {
     setIsEdit(value: boolean): void;
 }
 
+export interface ISearchIconProps {
+    onClick(event: React.MouseEvent<HTMLDivElement>): void;
+}
+
 export interface IActionListProps {
     removePost(id: number): (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -35,6 +39,11 @@ export interface IActionProps {
     removePost: Function;
     key: number;
     number: number;
+}
+
+export interface IActionControlsProps {
+    copyActions: IAction[]
+    setCopyActions(value: IAction[]): void;
 }
 
 export interface IAction {

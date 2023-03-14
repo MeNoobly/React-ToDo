@@ -6,6 +6,8 @@
 
 .Filter {
     position: absolute;
+    display: flex;
+    width: 78%;
     color: white;
     left: 200px;
     top: 35px;
@@ -15,4 +17,15 @@
     display: block;
     width: 128px;
     height: 128px;
+}
+
+.FilterInput {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    max-width: 1200px;
+    width: 100%;
+    font-size: 22px;
+    transform: translateY(-5px);
 }
